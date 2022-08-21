@@ -7,9 +7,11 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms'
+import { CreateVideoInput } from 'types/graphql'
 
 const VideoForm = ({ video = null, error, onSave, loading }) => {
-  const onSubmit = (data) => {
+  const onSubmit = (data: CreateVideoInput) => {
+    console.log({ data })
     onSave({ id: video?.id, input: data })
   }
 

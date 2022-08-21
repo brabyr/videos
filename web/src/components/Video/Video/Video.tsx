@@ -68,7 +68,11 @@ const Video = ({ video }) => {
       <Reactions className="mt-4" video={video} onClick={onReactionClick} />
       {isCurrentUser && (
         <div className="mt-4">
-          <Button to={routes.editVideo({ id: video.id })}>Edit</Button>
+          <Button
+            onClick={() => navigate(routes.editVideo({ id: video.id }))}
+          >
+            Edit
+          </Button>
           <Button
             className="ml-2 bg-red-500"
             onClick={() => onDeleteClick(video.id)}
